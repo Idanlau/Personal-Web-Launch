@@ -1,0 +1,59 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+<ul class="nav justify-content-center navbar-light bg-light">
+
+    <li class="nav-item px-2 py-2 ml-auto">
+<form action="/account/profile/">
+    <button class = 'btn btn-link btn-lg' type="submit">Profile</button>
+</form>
+       </li>
+
+    <li class="nav-item px-2 py-2 ml-auto">
+<form action="/edit/bio/">
+    <button class = 'btn btn-link btn-lg' type="submit">Edit Profile</button>
+</form>
+      </li>
+
+      <li class="nav-item px-2 py-2 ml-auto">
+<form action="/prev/">
+    <button class = 'btn btn-link btn-lg' type="submit">Posts</button>
+</form>
+      </li>
+
+    <li class="nav-item px-2 py-2 ml-auto">
+<form action="/upload/">
+    <button class = 'btn btn-link btn-lg' type="submit">Upload</button>
+</form>
+  </li>
+
+
+            <li class="nav-item px-2 py-2 ml-auto">
+<form action="/contact/">
+    <button class = 'btn btn-link btn-lg' type="submit">contact</button>
+</form>
+  </li>
+
+
+
+        <li class="nav-item px-2 py-2 ml-auto">
+<form action="/logout/">
+    <button class = 'btn btn-link btn-lg' type="submit">logout</button>
+</form>
+  </li>
+
+
+
+
+    <li class="nav-item px-4 py-1 ml-auto">
+    <img  class="rounded-circle" src = "{{ profile.image.url }}" width="65" height="65"/>
+</li>
+
+
+</ul>
+
+
+
+
+{% block head %}
+{% endblock %}

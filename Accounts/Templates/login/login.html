@@ -1,0 +1,48 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+{% extends 'Base/not_logged.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block head %}
+
+
+<style>
+input {max-width: 35em}
+
+#content-container {
+  width: 450px ;
+  margin: 0  auto;
+}
+
+</style>
+
+
+<form method="post">
+    {% csrf_token %}
+
+
+    <br>
+    <br>
+
+    <center><h1>Login Form </h1></center>
+
+    <div id="content-container">
+
+    {{ form.username|as_crispy_field }}
+    {{ form.password|as_crispy_field }}
+
+    </div>
+
+
+    <br>
+   <center>
+       <p class="container-fluid"> <button class = "btn btn-outline-primary" type = 'submit'> Login </button></p>
+       <br>
+       <a href="/create/">Don't have an account? Create one!</a>
+   </center>
+
+</form>
+
+{% endblock %}

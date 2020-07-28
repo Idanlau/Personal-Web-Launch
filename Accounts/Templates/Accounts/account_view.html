@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+{% extends 'Base/base.html' %}
+
+
+
+{% block head %}
+
+<br>
+<div class="container-fluid">
+    <h1>Welcome! {{user}}</h1>
+
+<br>
+<p> Description: {{profile.description}}</p>
+
+<p>Email: {{user.email}}</p>
+
+{% if request.user.is_superuser %}
+    <p>Position: Admin</p>
+
+
+{% elif request.user.is_staff %}
+    <p>Position: Staff</p>
+
+{% else %}
+    <p>Position: Member</p>
+
+{% endif %}
+
+</div>
+
+{% endblock %}

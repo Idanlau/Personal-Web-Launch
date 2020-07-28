@@ -1,0 +1,21 @@
+{% extends 'Base/not_logged.html' %}
+
+{% block head %}
+
+<h1 class = "text-center">Post Lists!</h1>
+
+
+<center>{% for post in posts %}
+
+<form action="/post/{{post.id}}/">
+    <div class="container-fluid">
+    <button class = 'btn btn-secondary' type="submit"> <img  src = "{{post.preview_img.url}}" width="120" height="100"/><br><br>{{post.title}}<br><br>{{post.time}}</button>
+    </div>
+</form>
+
+    {% endfor %}
+
+</center>
+
+{% endblock %}
+

@@ -1,0 +1,54 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+<style>
+.btn {
+    width: 180px;
+    height: 60px;
+}
+#buttons{
+position:relative;
+right:0px;
+}
+
+#text{
+   position:relative;
+}
+p {
+  font-size: 1.75em; /* 14px/16=0.875em */
+}
+
+
+</style>
+
+
+<div class="bg-primary text-white" style="padding-bottom: 150px;">
+    <center>
+        <br>
+        <h1>Welcome!</h1>
+    <br>
+    <br>
+    <form action = '/login/'>
+        <button class = "btn  btn-primary btn-outline-light  btn-lg" type="submit"> login </button>
+    </form>
+
+    <div id = "buttons" class = " row justify-content-center" style="padding-top: 30px;">
+        <form action = '/create/'  style="margin: 10px;">
+            <button class = "btn btn-outline-light" type="submit"> Create account </button>
+        </form>
+    <form action = '/not/prev/ '  style="margin: 10px;">
+        <button class = "btn btn-outline-light" type="submit"> Continue without account </button>
+    </form>
+
+</div>
+    </center>
+</div>
+<br>
+<br>
+<br>
+<div id = "text">
+<p style="text-align:center; padding-left:200px; padding-right:200px;">Hello, my name is Idan and welcome to my website! This website is a place where I test random features. Since I wrote
+    this website from scratch using django so please contact me if there is a bug or a feature you want to see!
+    There would be a contact form when you login.</p>
+
+</div>

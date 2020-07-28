@@ -1,0 +1,76 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+
+
+{% extends 'Base/not_logged.html' %}
+
+{% load crispy_forms_tags %}
+
+{{ form.errors }}
+{{ form.non_field_errors }}
+
+
+
+{% block head %}
+
+<style>
+input {max-width: 40em}
+
+#content-container {
+  width: 650px ;
+  margin: 0  auto;
+}
+
+#names{
+    max-width: 42em
+}
+</style>
+
+
+
+<form method="post">
+
+    {% csrf_token %}
+    <br>
+
+   <center><h1>Registration Form </h1></center>
+
+<div id="content-container">
+
+
+
+    {{ form.username|as_crispy_field }}
+
+
+    <div class="row" id="names">
+
+      <div class="col-6">
+          {{ form.first_name|as_crispy_field }}
+      </div>
+
+        <div class="col-6">
+              {{ form.last_name|as_crispy_field }}
+      </div>
+        </div>
+
+
+
+    {{ form.email|as_crispy_field }}
+    {{ form.password1|as_crispy_field }}
+    {{ form.password2|as_crispy_field }}
+
+    <br>
+
+    <center>  <button  class = "btn btn-outline-primary" type = 'submit'> Create! </button></center>
+
+    </div>
+
+
+
+
+
+</form>
+
+{% endblock %}

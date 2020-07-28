@@ -2,7 +2,9 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/IdanLauSite" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/web2" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/web2 copy 3/IdanLauSite" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/web2/IdanLauSite" vcs="Git" />
   </component>
 </project>
