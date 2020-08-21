@@ -30,7 +30,9 @@ SECRET_KEY = 'bbs3tr_bx5w*6bg^7wv6tyg%h614i_-8fyt$g)i_p59(l6=3t$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = [ 'idanlau.pythonanywhere.com' ]
+ALLOWED_HOSTS = [ '127.0.0.1' ]
+
 
 
 # Application definition
@@ -66,10 +68,17 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'IdanLauSite.urls'
 
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR, 'Accounts', 'Templates'),
+    os.path.join(BASE_DIR, 'Upload', 'Templates'),
+    os.path.join(BASE_DIR, 'Pages', 'Templates'),
+    os.path.join(BASE_DIR, 'Contact', 'Templates'),
+)
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'Templates')],
+        'DIRS': TEMPLATE_DIRS,
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -81,6 +90,9 @@ TEMPLATES = [
         },
     },
 ]
+
+
+
 
 WSGI_APPLICATION = 'IdanLauSite.wsgi.application'
 
