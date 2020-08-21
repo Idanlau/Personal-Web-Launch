@@ -9,6 +9,8 @@ from .models import Profile
 class CustomCreateForm(UserCreationForm):
     email = forms.EmailField(required=True)
 
+    print("Hello")
+
     def __init__(self, *args, **kwargs):
         super(CustomCreateForm, self).__init__(*args, **kwargs)
 
