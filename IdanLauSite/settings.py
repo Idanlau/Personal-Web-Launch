@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
+
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -30,7 +31,7 @@ SECRET_KEY = 'bbs3tr_bx5w*6bg^7wv6tyg%h614i_-8fyt$g)i_p59(l6=3t$'
 DEBUG = True
 
 #ALLOWED_HOSTS = [ 'idanlau.pythonanywhere.com' ]
-ALLOWED_HOSTS = [ '127.0.0.1' ]
+ALLOWED_HOSTS = ['127.0.0.1','idanlau.pythonanywhere.com']
 
 
 
