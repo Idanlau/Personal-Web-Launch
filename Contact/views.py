@@ -10,7 +10,7 @@ def contactview(request):
     message=''
 
 
-    form= ContactForm(request.POST or None, initial={'email': request.user.email})
+    form= ContactForm(request.POST or None)
 
     if request.user.is_authenticated:
 
