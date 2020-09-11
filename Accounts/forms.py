@@ -4,8 +4,6 @@ from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from crispy_forms.helper import FormHelper
 from .models import Profile
 
-
-
 class CustomCreateForm(UserCreationForm):
     email = forms.EmailField(required=True)
 
@@ -15,6 +13,7 @@ class CustomCreateForm(UserCreationForm):
 
         for fieldname in ['username', 'first_name','last_name','email','password1', 'password2']:
            self.fields[fieldname].help_text = None
+
 
 
 class RegistrationForm(CustomCreateForm):
@@ -44,10 +43,15 @@ class RegistrationForm(CustomCreateForm):
 
         return user
 
+class ProfileForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = ['description','image','city',]
+
 class edit_profile(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ['description','image']
+        fields = ['description','image','city',]
 
 
 class LoginForm(forms.ModelForm):

@@ -6,7 +6,7 @@ from django.forms.widgets import ClearableFileInput
 class UploadForm(forms.ModelForm):
     class Meta:
         model = Uploads
-        fields = ['title','content','preview_img',]
+        fields = ['title','content','preview_img','code',]
 
 class ImageForm(forms.ModelForm):
     # post_files = forms.FileField(

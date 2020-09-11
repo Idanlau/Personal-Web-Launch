@@ -20,7 +20,6 @@ from Accounts.views import account_view, account_create_view, logout_view, edit_
 from Pages.views import home_view, preview, post_view, not_logged_preview
 from Upload.views import AdminPostView
 from Contact.views import contactview
-
 from django.conf.urls.static import static
 
 urlpatterns = [
@@ -35,6 +34,6 @@ urlpatterns = [
     path('login/', CustomLoginView.as_view()),
     path('upload/',AdminPostView),
     path('not/prev/', not_logged_preview.as_view()),
-    path('contact/', contactview)
+    path('contact/', contactview),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

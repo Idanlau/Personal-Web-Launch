@@ -9,7 +9,8 @@ from django.contrib.auth.models import User
 class Uploads(models.Model):
     title = models.CharField(max_length=50)
     content = models.TextField()
-    time =  models.DateTimeField(default=timezone.now)
+    code = models.TextField(default=True)
+    time = models.DateTimeField(default=timezone.now)
     preview_img = models.ImageField(default = 'default.png', upload_to="preview_photo/")
 
 

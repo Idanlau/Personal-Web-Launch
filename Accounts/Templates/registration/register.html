@@ -30,7 +30,7 @@ input {max-width: 40em}
 
 
 
-<form method="post">
+<form method="post" enctype="multipart/form-data">
 
     {% csrf_token %}
     <br>
@@ -41,25 +41,30 @@ input {max-width: 40em}
 
 
 
-    {{ form.username|as_crispy_field }}
+    {{ registration.username|as_crispy_field }}
 
 
     <div class="row" id="names">
 
       <div class="col-6">
-          {{ form.first_name|as_crispy_field }}
+          {{ registration.first_name|as_crispy_field }}
       </div>
 
         <div class="col-6">
-              {{ form.last_name|as_crispy_field }}
+              {{ registration.last_name|as_crispy_field }}
       </div>
         </div>
 
 
 
-    {{ form.email|as_crispy_field }}
-    {{ form.password1|as_crispy_field }}
-    {{ form.password2|as_crispy_field }}
+    {{ registration.email|as_crispy_field }}
+    {{ registration.password1|as_crispy_field }}
+    {{ registration.password2|as_crispy_field }}
+
+    {{ profile.description|as_crispy_field }}
+    {{ profile.image|as_crispy_field }}
+    {{ profile.city|as_crispy_field }}
+
 
     <br>
 

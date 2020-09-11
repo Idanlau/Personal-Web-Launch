@@ -5,13 +5,49 @@ from django.contrib.auth.models import User
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.conf import settings
 from Accounts.models import Profile
+from Contact.forms import ContactForm
+from django.core.mail import send_mail
 
 
 
 
 # Create your views here.
 def home_view(request):
-    return render(request, "Home/home_view.html")
+    email=''
+    subject=''
+    message=''
+
+    form= ContactForm(request.POST or None)
+
+    if request.user.is_authenticated:
+
+        if form.is_valid():
+            email= form.cleaned_data.get("email")
+            subject= form.cleaned_data.get("subject")
+            message=form.cleaned_data.get("message")
+
+
+            subject= str(request.user) + "'s Comment"
+
+
+            message = email + " with the email, " + subject + ", sent the following message:\n\n" + message
+            send_mail(subject, message, email, ['lauidan31@gmail.com'])
+            form = ContactForm()
+
+            return render(request, 'Home/home_view.html', {'form': form})
+    else:
+        if form.is_valid():
+            email = form.cleaned_data.get("email")
+            subject = form.cleaned_data.get("subject")
+            message = form.cleaned_data.get("message")
+
+            subject = "Guest" + "'s Comment"
+
+            message = email + " with the email, " + subject + ", sent the following message:\n\n" + message
+            send_mail(subject, message, email, ['lauidan31@gmail.com'])
+            form = ContactForm()
+
+    return render(request, "Home/home_view.html",{'form': form})
 
 
 class preview(LoginRequiredMixin,ListView):

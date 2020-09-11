@@ -1,33 +1,53 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
 {% extends 'Base/base.html' %}
-
-
-
 {% block head %}
-
+<style>
+   #wrap{
+   min-width: 100000000px;
+   }
+</style>
 <br>
-<div class="container-fluid">
-    <h1>Welcome! {{user}}</h1>
-
+<center>
+   <h1>Welcome! {{user}}</h1>
+</center>
 <br>
-<p> Description: {{profile.description}}</p>
-
-<p>Email: {{user.email}}</p>
-
-{% if request.user.is_superuser %}
-    <p>Position: Admin</p>
-
-
-{% elif request.user.is_staff %}
-    <p>Position: Staff</p>
-
-{% else %}
-    <p>Position: Member</p>
-
-{% endif %}
-
+<div class="row " STYLE="float:right; margin-right:30%;">
+<div class = "column">
+   <div class="container-fluid bg-light" STYLE = " padding-left:100px; padding-right:100px; padding-bottom:20px;" >
+      <div STYLE = "position:relative; left:100%;">
+         <form action="/edit/bio/">
+            <button class = 'btn btn-link btn-m' type="submit">Edit Profile</button>
+         </form>
+      </div>
+      <h1> Personal Info </h1>
+      <br>
+      <p> Description: {{profile.description}}</p>
+      <p>Email: {{user.email}}</p>
+      {% if request.user.is_superuser %}
+      <p>Position: Admin</p>
+      {% elif request.user.is_staff %}
+      <p>Position: Staff</p>
+      {% else %}
+      <p>Position: Member</p>
+      {% endif %}
+      <p>City: {{city}}</p>
+   </div>
 </div>
-
+      <div class = "column">
+         <div class="container-fluid bg-light" STYLE = "margin-left:200px; padding-bottom:20px;" >
+            <center>
+               <h1> DashBoard </h1>
+               <div class="container-fluid bg-white">
+                  <span  STYLE="font-size:30px">{{city}}</span>
+                  <br>
+                  <span  STYLE="font-size:20px">{{temperature }}° C</span>
+                  <br>
+                  <img src="http://openweathermap.org/img/w/{{icon}}.png" alt="Image"  width="50" height="50">
+                  {{ description }}
+               </div>
+            </center>
+         </div>
+      </div>
+</div>
 {% endblock %}

@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
+{% load crispy_forms_tags %}
 <style>
 .btn {
     width: 180px;
@@ -17,38 +18,78 @@ right:0px;
 p {
   font-size: 1.75em; /* 14px/16=0.875em */
 }
+#background {
+    background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
+    height: 50%;
+}
 
+input {max-width: 40em}
+
+#formbg{
+    background: linear-gradient(90deg, #ECF0F1   0%, #ECF0F1  100%);
+}
 
 </style>
 
 
-<div class="bg-primary text-white" style="padding-bottom: 150px;">
+<head>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+</head>
+
+<div id = "background">
+    <br>
+    <br>
+    <br>
     <center>
         <br>
-        <h1>Welcome!</h1>
+        <h1 style="color:#FFFFFF; font-size:50px;" class = "animate__animated animate__bounceInLeft">Welcome to my website!</h1>
     <br>
+    <br>
+        <br>
     <br>
     <form action = '/login/'>
-        <button class = "btn  btn-primary btn-outline-light  btn-lg" type="submit"> login </button>
+        <button class = "btn  btn-primary btn-outline-light  btn-lg animate__animated animate__bounceInLeft" type="submit"> Get started </button>
     </form>
 
-    <div id = "buttons" class = " row justify-content-center" style="padding-top: 30px;">
-        <form action = '/create/'  style="margin: 10px;">
-            <button class = "btn btn-outline-light" type="submit"> Create account </button>
-        </form>
-    <form action = '/not/prev/ '  style="margin: 10px;">
-        <button class = "btn btn-outline-light" type="submit"> Continue without account </button>
-    </form>
-
-</div>
     </center>
-</div>
+
+    </div>
 <br>
-<br>
-<br>
-<div id = "text">
-<p style="text-align:center; padding-left:200px; padding-right:200px;">Hello, my name is Idan and welcome to my website! This website is a place where I test random features. Since I wrote
+<div id = "text" class = "animate__animated animate__fadeInRight">
+    <h1> <center> About me: </center> </h1>
+<p style="text-align:center; padding-left:200px; padding-right:200px;"  >Hello, my name is Idan and welcome to my website! This website is a place where I test random features. Since I wrote
     this website from scratch using django so please contact me if there is a bug or a feature you want to see!
     There would be a contact form when you login.</p>
 
 </div>
+<br>
+<br>
+
+<div id="formbg" class = "animate__animated animate__bounceInLeft">
+    <br>
+<center><h1>Contact Form </h1></center>
+
+<form action="" method="POST">
+{% csrf_token %}
+
+<div style = "margin-left: 15%;margin-right: 15%;">
+<div class="row">
+
+      <div class="col-6">
+           {{ form.email|as_crispy_field }}
+      </div>
+
+        <div class="col-6">
+              {{ form.subject|as_crispy_field }}
+      </div>
+        </div>
+    {{ form.message|as_crispy_field }}
+
+
+ <center><button class = 'btn btn-secondary' type="submit"> Send! </button></center>
+</form>
+</div>
+ </div>

@@ -25,12 +25,11 @@ def contactview(request):
 
             message = email + " with the email, " + subject + ", sent the following message:\n\n" + message
             send_mail(subject, message, email, ['lauidan31@gmail.com'])
+            form = ContactForm()
 
-            return render(request, 'contact.html', {'form': form, 'profile': Profile.objects.get(user=request.user)})
+            return render(request, 'contact.html', {'form': form})
 
 
-        else:
-            return render(request, 'contact.html', {'form': form, 'profile': Profile.objects.get(user=request.user)})
 
     else:
         if form.is_valid():
@@ -42,10 +41,11 @@ def contactview(request):
 
             message = email + " with the email, " + subject + ", sent the following message:\n\n" + message
             send_mail(subject, message, email, ['lauidan31@gmail.com'])
+            form = ContactForm()
+
+
 
         return render(request, 'not_logged_contact.html',{'form': form})
-
-
 
 
 
