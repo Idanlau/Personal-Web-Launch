@@ -30,9 +30,17 @@ SECRET_KEY = 'bbs3tr_bx5w*6bg^7wv6tyg%h614i_-8fyt$g)i_p59(l6=3t$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #ALLOWED_HOSTS = [ 'idanlau.pythonanywhere.com' ]
 ALLOWED_HOSTS = ['127.0.0.1','idanlau.pythonanywhere.com']
 
+=======
+ALLOWED_HOSTS = [ 'idanlau.pythonanywhere.com' ]
+>>>>>>> Stashed changes
+=======
+ALLOWED_HOSTS = [ 'idanlau.pythonanywhere.com' ]
+>>>>>>> Stashed changes
 
 
 # Application definition
@@ -143,6 +151,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
+
 
 STATIC_URL = '/static/'
 
